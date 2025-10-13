@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Aplica globalmente la fuente */
+html {
+  font-family: var(--font-sans);
+}
