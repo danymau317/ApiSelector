@@ -6,6 +6,9 @@ import ApiSelector from "./components/ApiSelector/ApiSelector";
 import ApiTitle from "./components/ApiTitle/ApiTitle";
 
 import UserList from "./components/UserList/UserList";
+import PhotoGallery from "./components/PhotoGallery/PhotoGallery";
+import DashboardWeather from "./components/DashboardWeather/DashboardWeather";
+
 import "./App.css";
 
 export type ApiProps = {
@@ -34,7 +37,33 @@ function App() {
       <Main />
       <ApiSelector setApi={(api) => updateInfoApi(api)} />
       <ApiTitle title={api.title} method={api.method} endpoint={api.endpoint} />
-      <UserList />
+      {
+        <>
+          <UserList
+            isSelected={
+              api.title.toLowerCase() == "lista de usuarios" ? true : false
+            }
+            className={`${
+              api.title.toLowerCase() !== "lista de usuarios"
+                ? "absolute translate-x-[-1000%] blur-xl"
+                : "relative translate-x[0%] blur-none"
+            }`}
+          />
+
+          <PhotoGallery
+            isSelected={
+              api.title.toLowerCase() == "galeria de fotos" ? true : false
+            }
+            className={`${
+              api.title.toLowerCase() !== "galeria de fotos"
+                ? "absolute translate-x-[-1000%]"
+                : "relative translate-x-[0%]"
+            }`}
+          />
+
+          <DashboardWeather />
+        </>
+      }
     </section>
   );
 }

@@ -17,14 +17,19 @@ type ApiUserProps = {
   };
 };
 
-type Props = {};
+type UserListProps = {
+  className: string;
+  isSelected: boolean;
+};
 
-export default function UserList({}: Props) {
+export default function UserList({ className, isSelected }: UserListProps) {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
   const [users, setUsers] = useState<ApiUserProps[]>([]);
 
   useEffect(() => {
+    if (!isSelected) return;
+
     async function fetchUsers() {
       try {
         const res = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -38,14 +43,16 @@ export default function UserList({}: Props) {
       }
     }
     fetchUsers();
-  }, []);
+  }, [isSelected]);
 
   return loading ? (
     <p>Cargando Usuarios...</p>
   ) : error ? (
     <p>Hubo un error Error: {error}</p>
   ) : (
-    <section className="border-2 border-red-500 grid grid-cols-1 grid-rows-2 gap-3">
+    <section
+      className={`border-2 border-red-500 grid grid-cols-1 grid-rows-2 gap-3 overflow-hidden transition-all duration-550 z-[-2] ${className}`}
+    >
       {users.map((user) => (
         <UserListItem
           key={user.id}

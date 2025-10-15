@@ -23,7 +23,7 @@ const itemsApiSelector: itemApiSelectorType[] = [
     isSelected: false,
     title: "Galeria de Fotos",
     method: "GET",
-    endpoint: "jsonplaceholder.typicode.com/photos?_limit=12",
+    endpoint: "picsum.photos/v2/list?page=1&limit=12",
   },
   {
     nameIcon: "cloud",

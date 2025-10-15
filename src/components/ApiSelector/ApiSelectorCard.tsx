@@ -21,7 +21,7 @@ export default function ApiSelectorCard({
       onClick={onClick}
     >
       <span
-        className={`material-symbols-outlined text-[1px] transition-all duration-400 ${
+        className={`material-symbols-outlined text-[1px] transition-all duration-400 z-[-2]${
           isSelected && "scale-120"
         } ${classNameIcon}`}
       >
