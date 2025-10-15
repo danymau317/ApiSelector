@@ -42,10 +42,10 @@ const itemsApiSelector: itemApiSelectorType[] = [
 ];
 
 type Props = {
-  setApiTitle: (api: ApiProps) => void;
+  setApi: (api: ApiProps) => void;
 };
 
-function ApiSelector({ setApiTitle }: Props) {
+function ApiSelector({ setApi }: Props) {
   const [cards, setCards] = useState<itemApiSelectorType[]>(itemsApiSelector);
 
   function handleSelect(index: number) {
@@ -57,7 +57,7 @@ function ApiSelector({ setApiTitle }: Props) {
     const findSelectedItem = cards.find((_, i) => i === index);
 
     setCards(updated);
-    if (findSelectedItem) setApiTitle(findSelectedItem);
+    if (findSelectedItem) setApi(findSelectedItem);
   }
 
   return (
