@@ -61,7 +61,16 @@ function App() {
             }`}
           />
 
-          <DashboardWeather />
+          <DashboardWeather
+            isSelected={
+              api.title.toLowerCase() == "dashboard del clima" ? true : false
+            }
+            className={`${
+              api.title.toLowerCase() !== "dashboard del clima"
+                ? "absolute translate-x-[-1000%]"
+                : "relative translate-x-[0%]"
+            }`}
+          />
         </>
       }
     </section>

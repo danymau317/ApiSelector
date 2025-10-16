@@ -28,7 +28,7 @@ const itemsApiSelector: itemApiSelectorType[] = [
   {
     nameIcon: "cloud",
     isSelected: false,
-    title: "Dahboard del Clima",
+    title: "Dashboard del Clima",
     method: "GET",
     endpoint: "api.open-meteo.com/v1/forecast",
   },
