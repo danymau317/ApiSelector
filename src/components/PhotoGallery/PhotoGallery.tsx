@@ -31,7 +31,7 @@ export default function PhotoGallery({
     <p>Error: {error}</p>
   ) : (
     <section
-      className={`border-2 border-red-500 my-5 grid grid-cols-1 grid-rows-2 gap-3 overflow-hidden transition-all duration-550 z-[-2] ${className}`}
+      className={`my-5 grid grid-cols-1 grid-rows-2 gap-3 overflow-hidden transition-all duration-550 z-[-2] lg:grid-cols-4 ${className}`}
     >
       {photos?.map((photo) => (
         <PhotoGalleryCard

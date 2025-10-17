@@ -1,4 +1,3 @@
-// import { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 
 import DashboardWeatherItem from "./DashboardWeatherItem";
@@ -63,7 +62,7 @@ export default function DashboardWeather({
     <p>Se ha obtenido un error: {error}</p>
   ) : (
     <section
-      className={`border-2 border-red-500 grid grid-cols-1 grid-rows-2 gap-3 overflow-hidden transition-all duration-550 z-[-2] ${className}`}
+      className={`grid grid-cols-1 grid-rows-2 gap-3 overflow-hidden transition-all duration-550 z-[-2] lg:grid-cols-3 lg:grid-rows-1 ${className}`}
     >
       {weatherItems.map((item, index) => (
         <DashboardWeatherItem

@@ -61,7 +61,7 @@ function ApiSelector({ setApi }: Props) {
   }
 
   return (
-    <section className="grid grid-cols-2 grid-rows-2 justify-items-center gap-2 bg-gray-200 rounded-md mx-auto w-[95vw] mt-5 p-2">
+    <section className="grid grid-cols-2 grid-rows-2 justify-items-center gap-2 bg-gray-200 rounded-md mx-auto w-[95vw] mt-5 p-2 lg:grid-cols-4 lg:grid-rows-1">
       {cards.map((card, index) => (
         <ApiSelectorCard
           nameIcon={card.nameIcon}

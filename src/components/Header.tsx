@@ -2,7 +2,7 @@ type Props = {};
 
 function Header({}: Props) {
   return (
-    <header className="bg-white border-b-2 border-b-gray-300 flex justify-evenly items-center fixed inset-0 w-full h-[10vh] py-2">
+    <header className="bg-white border-b-2 border-b-gray-300 flex justify-evenly items-center fixed inset-0 w-full h-[10vh] py-2 md:justify-start md:px-20 md:gap-10">
       <div>
         <span className="material-symbols-outlined aspect-square rounded-md bg-[#1c398e] p-2 text-white">
           code

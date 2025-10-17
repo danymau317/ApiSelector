@@ -8,6 +8,7 @@ import ApiTitle from "./components/ApiTitle/ApiTitle";
 import UserList from "./components/UserList/UserList";
 import PhotoGallery from "./components/PhotoGallery/PhotoGallery";
 import DashboardWeather from "./components/DashboardWeather/DashboardWeather";
+import CryptoTracker from "./components/CryptoTracker/CryptoTracker";
 
 import "./App.css";
 
@@ -67,6 +68,17 @@ function App() {
             }
             className={`${
               api.title.toLowerCase() !== "dashboard del clima"
+                ? "absolute translate-x-[-1000%]"
+                : "relative translate-x-[0%]"
+            }`}
+          />
+
+          <CryptoTracker
+            isSelected={
+              api.title.toLowerCase() == "crypto tracker" ? true : false
+            }
+            className={`${
+              api.title.toLowerCase() !== "crypto tracker"
                 ? "absolute translate-x-[-1000%]"
                 : "relative translate-x-[0%]"
             }`}

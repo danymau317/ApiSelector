@@ -1,4 +1,3 @@
-// import { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import UserListItem from "./UserListItem";
 
@@ -38,7 +37,7 @@ export default function UserList({ className, isSelected }: UserListProps) {
     <p>Hubo un error Error: {error}</p>
   ) : (
     <section
-      className={`border-2 border-red-500 grid grid-cols-1 grid-rows-2 gap-3 overflow-hidden transition-all duration-550 z-[-2] ${className}`}
+      className={`grid grid-cols-1 grid-rows-2 gap-3 overflow-hidden transition-all duration-550 z-[-2] lg:grid-cols-3 ${className}`}
     >
       {users?.map((user) => (
         <UserListItem

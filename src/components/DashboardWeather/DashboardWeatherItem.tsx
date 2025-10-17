@@ -45,7 +45,7 @@ export default function DashboardWeatherItem({
 }: DashboardWeatherItemProps) {
   return (
     <article
-      className={`border-2 border-blue-500 ${backgroundColors[background]} flex flex-col gap-1 p-5 rounded-xl`}
+      className={`border-2 border-gray-300 ${backgroundColors[background]} flex flex-col gap-1 p-5 rounded-xl`}
     >
       <header className="flex justify-between">
         <h2 className="font-semibold text-gray-500 text-lg mb-[15%]">
