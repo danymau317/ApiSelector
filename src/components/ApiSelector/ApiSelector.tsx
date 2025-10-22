@@ -8,6 +8,7 @@ type itemApiSelectorType = {
   title: string;
   method: string;
   endpoint: string;
+  className?: string;
 };
 
 const itemsApiSelector: itemApiSelectorType[] = [
@@ -17,6 +18,7 @@ const itemsApiSelector: itemApiSelectorType[] = [
     title: "Lista de Usuarios",
     method: "GET",
     endpoint: "jsonplaceholder.typicode.com/users",
+    className: "col-span-1",
   },
   {
     nameIcon: "image",
@@ -24,6 +26,7 @@ const itemsApiSelector: itemApiSelectorType[] = [
     title: "Galeria de Fotos",
     method: "GET",
     endpoint: "picsum.photos/v2/list?page=1&limit=12",
+    className: "col-span-1",
   },
   {
     nameIcon: "cloud",
@@ -31,6 +34,7 @@ const itemsApiSelector: itemApiSelectorType[] = [
     title: "Dashboard del Clima",
     method: "GET",
     endpoint: "api.open-meteo.com/v1/forecast",
+    className: "col-span-1",
   },
   {
     nameIcon: "trending_up",
@@ -38,6 +42,15 @@ const itemsApiSelector: itemApiSelectorType[] = [
     title: "Crypto Tracker",
     method: "GET",
     endpoint: "api.coingecko.com/api/v3/coins/markets",
+    className: "",
+  },
+  {
+    nameIcon: "build",
+    isSelected: false,
+    title: "Custom API",
+    method: "",
+    endpoint: "https://endpoint.com",
+    className: "col-span-2",
   },
 ];
 
@@ -68,6 +81,7 @@ function ApiSelector({ setApi }: Props) {
           key={index}
           onClick={() => handleSelect(index)}
           isSelected={card.isSelected}
+          className={card.className}
         />
       ))}
     </section>

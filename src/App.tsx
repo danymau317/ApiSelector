@@ -3,13 +3,14 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import ApiSelector from "./components/ApiSelector/ApiSelector";
-import ApiTitle from "./components/ApiTitle/ApiTitle";
+import ApiTitle from "./components/CustomApi/ApiTitle/ApiTitle";
 
 import UserList from "./components/UserList/UserList";
 import PhotoGallery from "./components/PhotoGallery/PhotoGallery";
 import DashboardWeather from "./components/DashboardWeather/DashboardWeather";
 import CryptoTracker from "./components/CryptoTracker/CryptoTracker";
 
+import CustomApi from "./components/CustomApi/ApiTitle/CustomApi";
 import "./App.css";
 
 export type ApiProps = {
@@ -37,7 +38,30 @@ function App() {
       <Header />
       <Main />
       <ApiSelector setApi={(api) => updateInfoApi(api)} />
-      <ApiTitle title={api.title} method={api.method} endpoint={api.endpoint} />
+
+      {
+        <>
+          <ApiTitle
+            title={api.title}
+            method={api.method}
+            endpoint={api.endpoint}
+            className={
+              api.title.toLowerCase() !== "custom api"
+                ? "relative translate-x[0%] blur-none"
+                : "absolute translate-x-[-1000%] blur-xl"
+            }
+          />
+
+          <CustomApi
+            className={
+              api.title.toLowerCase() === "custom api"
+                ? "relative translate-x[0%] blur-none"
+                : "absolute translate-x-[-1000%] blur-xl"
+            }
+          />
+        </>
+      }
+
       {
         <>
           <UserList

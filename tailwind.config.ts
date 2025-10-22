@@ -3,6 +3,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter"],
+        geist: ["Geist"],
       },
     },
   },
